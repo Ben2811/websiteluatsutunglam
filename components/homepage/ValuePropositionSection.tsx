@@ -1,97 +1,94 @@
-import React from 'react';
-import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
-import { valuePropositionData } from '@/lib/utils/constants';
+import React from "react"
+import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card"
+import { valuePropositionData } from "@/lib/utils/constants"
 
 export default function ValuePropositionSection() {
-  const { badge, heading, features, buttons, stats } = valuePropositionData;
+  const { badge, heading, features, buttons, stats } = valuePropositionData
 
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="bg-background py-16 lg:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full">
-              <badge.icon className="w-4 h-4 text-blue-600 mr-2" />
-              <span className="text-blue-600 text-sm font-medium">
-                {badge.text}
-              </span>
+          <div className="space-y-10">
+            {/* Professional Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-secondary border border-primary/20 rounded-full">
+              {React.createElement(badge.icon, { className: "w-5 h-5 text-primary mr-3" })}
+              <span className="text-primary text-sm font-medium legal-text">{badge.text}</span>
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight legal-heading">
                 {heading.title}
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                {heading.description}
-              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed legal-text">{heading.description}</p>
             </div>
 
-            {/* Service Features */}
-            <div className="space-y-6">
+            {/* Professional Service Features */}
+            <div className="space-y-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-16 h-16 bg-secondary border border-primary/20 rounded-lg flex items-center justify-center mr-6 flex-shrink-0">
+                    {React.createElement(feature.icon, { className: "w-8 h-8 text-primary" })}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">
-                      {feature.description}
-                    </p>
+                    <h3 className="font-semibold text-foreground text-xl mb-3 legal-heading">{feature.title}</h3>
+                    <p className="text-muted-foreground legal-text leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Professional CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6">
               {buttons.map((button, index) => (
-                <Link 
+                <Link
                   key={index}
                   href={button.href}
-                  className={`inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-colors ${
-                    button.variant === 'primary' 
-                      ? 'bg-black text-white hover:bg-gray-800' 
-                      : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50'
+                  className={`inline-flex items-center justify-center px-8 py-4 font-medium rounded-lg transition-all duration-200 legal-button ${
+                    button.variant === "primary"
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl"
+                      : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   }`}
                 >
-                  <button.icon className="w-5 h-5 mr-2" />
+                  {React.createElement(button.icon, { className: "w-5 h-5 mr-3" })}
                   {button.text}
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Right Stats */}
-          <div className="space-y-6">
+          {/* Right Professional Stats */}
+          <div className="space-y-8">
             {/* Top Row - Two Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {stats.slice(0, 2).map((stat, index) => (
-                <Card key={index} className="text-center border border-gray-200 rounded-2xl bg-white">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-8 h-8 text-blue-600" />
+                <Card
+                  key={index}
+                  className="text-center border border-primary/10 rounded-2xl bg-background hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                >
+                  <CardContent className="p-8">
+                    <div className="w-20 h-20 bg-secondary border border-primary/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                      {React.createElement(stat.icon, { className: "w-10 h-10 text-primary" })}
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">{stat.title}</div>
-                    <div className="text-sm text-gray-600">{stat.description}</div>
+                    <div className="text-2xl font-bold text-foreground mb-3 legal-heading">{stat.title}</div>
+                    <div className="text-sm text-muted-foreground legal-text">{stat.description}</div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            
+
             {/* Bottom Row - One Card Centered */}
             <div className="flex justify-center">
-              <Card className="text-center border border-gray-200 rounded-2xl bg-white w-full max-w-[calc(50%-0.75rem)]">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    {React.createElement(stats[2].icon, { className: "w-8 h-8 text-blue-600" })}
+              <Card className="text-center border border-primary/10 rounded-2xl bg-background w-full max-w-[calc(50%-1rem)] hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                <CardContent className="p-8">
+                  <div className="w-20 h-20 bg-secondary border border-primary/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    {React.createElement(stats[2].icon, { className: "w-10 h-10 text-primary" })}
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-2">{stats[2].title}</div>
-                  <div className="text-sm text-gray-600">{stats[2].description}</div>
+                  <div className="text-2xl font-bold text-foreground mb-3 legal-heading">{stats[2].title}</div>
+                  <div className="text-sm text-muted-foreground legal-text">{stats[2].description}</div>
                 </CardContent>
               </Card>
             </div>
@@ -99,6 +96,5 @@ export default function ValuePropositionSection() {
         </div>
       </div>
     </section>
-  );
-};
-
+  )
+}
