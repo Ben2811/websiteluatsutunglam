@@ -6,7 +6,7 @@ import {
   Target, 
   BriefcaseBusiness, 
   Building, 
-  Handshake, 
+  Shield, 
   Home, 
   Heart, 
   Users,
@@ -27,11 +27,11 @@ import {
 export const heroData = {
   badge: {
     icon: Scale,
-    text: "12+ năm lĩnh vực hành nghề"
+    text: "12+ năm kinh nghiệm hành nghề"
   },
   heading: {
     title: "Đối tác pháp lý đáng tin cậy của bạn",
-    description: "Văn phòng Luật sư Tùng Lâm cam kết trở thành đối tác pháp lý vững chắc của bạn. Chúng tôi cung cấp các dịch vụ đại diện và tư vấn pháp lý cho khách hàng cá nhân và doanh nghiệp trên mọi lĩnh vực hành nghề"
+    description: "Văn phòng luật sư Tùng Lâm cung cấp dịch vụ đại diện pháp lý cho khách hàng trên mọi lĩnh vực hành nghề"
   },
   buttons: [
     {
@@ -49,18 +49,18 @@ export const heroData = {
   features: [
     {
       icon: BriefcaseBusiness,
-      title: "Kinh nghiệm dày dặn",
-      description: "Hơn một thập kỷ hành nghề chuyên nghiệp"
+      title: "Chuyên nghiệp",
+      description: "10+ năm kinh nghiệm hành nghề"
     },
     {
       icon: Users,
-      title: "Tận tâm và Chủ động",
-      description: "Luôn đặt khách hàng là trung tâm trong mọi quyết định, lấy sự hài lòng và thành công của khách hàng làm mục tiêu trọng tâm để phát triển."
+      title: "Tận tâm",
+      description: "Đặt khách hàng là trọng tâm"
     },
     {
       icon: Clock,
-      title: "Hỗ trợ Pháp lý 24/7",
-      description: "Luôn sẵn sàng có mặt khi bạn cần chúng tôi nhất, đảm bảo hỗ trợ kịp thời và liên tục cho mọi vấn đề pháp lý."
+      title: "24/7",
+      description: "Hỗ trợ"
     }
   ]
 };
@@ -103,7 +103,7 @@ export const coreValuesData = {
       description: "Chúng tôi duy trì các tiêu chuẩn đạo đức cao nhất đồng thời cung cấp thông tin liên lạc minh bạch trong suốt quá trình xử lý vụ việc của bạn.",
       link: {
         href: "#",
-        text: "12+ năm hành nghề",
+        text: "Hỗ trợ 24/7",
         icon: Award
       }
     }
@@ -124,31 +124,45 @@ export const servicesData = {
   services: [
     {
       icon: BriefcaseBusiness,
-      title: "Tham gia tố tụng",
+      title: "Luật Doanh nghiệp",
       description: "Thành lập doanh nghiệp.Mua bán vốn góp chuyển nhượng cổ phần,tham gia các tổ chức tự doanh và tài chính khác.",
       href: "/activity/corporate",
       buttonText: "Tham khảo về Luật Doanh nghiệp"
     },
     {
       icon: Users,
-      title: "Tư vấn pháp luật",
+      title: "Luật Dân sự",
       description: "Giải quyết các vụ việc tranh chấp hợp đồng dân sự.Tranh chấp tư liệu thương tố và các hành vi vi dân tích.",
       href: "/activity/civil",
       buttonText: "Tham khảo về Luật Dân sự"
     },
     {
-      icon: Handshake,
-      title: "Đại diện ngoài tố tụng",
+      icon: Heart,
+      title: "Luật Hôn nhân và Gia đình",
       description: "Tư vấn, hướng dẫn xin thành thủ tục giải ly hôn, chia tài sản chung giữa vợ và chồng,quyền nuôi con và các vấn đề khác.",
       href: "/activity/family",
       buttonText: "Tìm hiểu về Luật Hôn nhân Gia đình"
     },
     {
-      icon: Building,
-      title: "Dịch vụ pháp lý",
+      icon: Home,
+      title: "Luật Đất đai",
       description: "Tư vấn các thủ tục pháp lý liên quan đến việc sử dụng đất đai.Tách thửa họp đông và cấp bàng sở hữu nhà ở.Điều kiện của việc chuyển nhượng quyền sử dụng đất và tài sản khác.",
       href: "/activity/real-estate",
       buttonText: "Tham khảo về Luật Đất đai"
+    },
+    {
+      icon: Shield,
+      title: "Luật Hình sự",
+      description: "Bào chữa tích cực cho bị cáo và bị can trong lĩnh vực tội phạm diện về an toàn tổng lê và dân chủ.",
+      href: "/activity/criminal",
+      buttonText: "Tham khảo về Luật Hình sự"
+    },
+    {
+      icon: Building,
+      title: "Luật Lao động",
+      description: "Tư vấn và hỗ trợ giải quyết các tranh chấp lao động.Thành lập hợp đồng và phàn xử về chính sách lao động.",
+      href: "/activity/labor",
+      buttonText: "Tham khảo về Luật Lao động"
     }
   ],
   cta: {
@@ -279,7 +293,8 @@ export const contactData = {
     text: "Liên hệ hôm nay"
   },
   heading: {
-    title: "Bạn đã sẵn sàng thảo luận về vấn đề pháp lý của bạn ?",
+    title: "Bạn đã sẵn sàng thảo luận",
+    subtitle: "về vấn đề pháp lý của bạn ?",
     description: "Hãy liên hệ với chúng tôi ngay hôm nay để đặt lịch hẹn tư vấn. Văn phòng Luật sư Tùng Lâm sẵn sàng cung cấp hướng dẫn chuyên môn pháp lý và sự đại diện tích cực mà bạn xứng đáng được hưởng."
   },
   contactInfo: [

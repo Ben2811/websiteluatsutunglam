@@ -302,7 +302,7 @@ export default function ContactPage() {
                           <FormControl>
                             <Input
                               type="text"
-                              placeholder="Phường/xã"
+                              placeholder="Quận/huyện"
                               className="w-full"
                               {...field}
                             />
@@ -346,7 +346,7 @@ export default function ContactPage() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-gray-700">
-                              Loại hình dịch vụ
+                              Loại hình Luật
                             </FormLabel>
                             <Select
                               onValueChange={field.onChange}
@@ -354,21 +354,27 @@ export default function ContactPage() {
                             >
                               <FormControl>
                                 <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Chọn loại hình dịch vụ" />
+                                  <SelectValue placeholder="Chọn loại hình Luật" />
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
                                 <SelectItem value="criminal">
-                                 Tham gia tố tụng
+                                  Luật Hình sự
                                 </SelectItem>
                                 <SelectItem value="civil">
-                                  Tư vấn pháp luật
+                                  Luật Dân sự
                                 </SelectItem>
                                 <SelectItem value="family">
-                                 Đại diện ngoài tố tụng
+                                  Luật Gia đình
                                 </SelectItem>
                                 <SelectItem value="business">
-                                  Dịch vụ pháp lý
+                                  Luật Doanh nghiệp
+                                </SelectItem>
+                                <SelectItem value="labor">
+                                  Luật Lao động
+                                </SelectItem>
+                                <SelectItem value="land">
+                                  Luật Đất đai
                                 </SelectItem>
                               </SelectContent>
                             </Select>

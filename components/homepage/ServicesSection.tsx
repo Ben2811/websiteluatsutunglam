@@ -1,114 +1,75 @@
-import type React from "react"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { servicesData } from "@/lib/utils/constants"
+import React from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { servicesData } from '@/lib/utils/constants';
 
-/**
- * Professional section badge for legal practice areas
- */
-function PracticeAreaBadge({ icon: Icon, text }: { icon: React.ElementType; text: string }) {
-  return (
-    <div className="inline-flex items-center px-6 py-3 bg-background border border-primary/20 rounded-full mb-8">
-      <Icon className="w-5 h-5 text-primary mr-3" />
-      <span className="text-primary text-sm font-medium legal-text">{text}</span>
-    </div>
-  )
-}
-
-/**
- * Professional service card for legal practice areas
- */
-function ServiceCard({
-  icon: Icon,
-  title,
-  description,
-  href,
-  buttonText,
-}: {
-  icon: React.ElementType
-  title: string
-  description: string
-  href: string
-  buttonText: string
-}) {
-  return (
-    <Card className="group hover:shadow-xl transition-all duration-300 h-full flex flex-col bg-background border-primary/10 hover:border-primary/30">
-      <CardHeader className="pb-4">
-        <div className="w-16 h-16 bg-secondary border border-primary/20 rounded-lg flex items-center justify-center mb-4">
-          <Icon className="w-8 h-8 text-primary" />
-        </div>
-        <CardTitle className="text-xl font-bold text-foreground legal-heading">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1 pt-0">
-        <CardDescription className="text-muted-foreground text-base mb-6 legal-text leading-relaxed">
-          {description}
-        </CardDescription>
-      </CardContent>
-      <CardFooter className="justify-center pt-0">
-        <Link
-          href={href}
-          className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-200 legal-button"
-        >
-          {buttonText}
-          <ArrowRight className="w-4 h-4 ml-2" />
-        </Link>
-      </CardFooter>
-    </Card>
-  )
-}
-
-/**
- * Professional call-to-action for practice areas
- */
-function PracticeAreasCTA({ href, text }: { href: string; text: string }) {
-  return (
-    <div className="text-center mt-12">
-      <Link
-        href={href}
-        className="inline-flex items-center justify-center px-10 py-4 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-200 legal-button shadow-lg hover:shadow-xl"
-      >
-        {text}
-        <ArrowRight className="w-5 h-5 ml-3" />
-      </Link>
-    </div>
-  )
-}
-
-/**
- * Professional services section displaying legal practice areas
- */
 export default function ServicesSection() {
-  const { badge, heading, services, cta } = servicesData
+  const { badge, heading, services, cta } = servicesData;
 
   return (
-    <section className="bg-muted py-16 lg:py-24">
+    <section className="bg-gray-50 py-12 lg:py-16">
       <div className="container mx-auto px-4">
-        {/* Professional Section Header */}
-        <div className="text-center mb-16">
-          <PracticeAreaBadge icon={badge.icon} text={badge.text} />
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 legal-heading">{heading.title}</h2>
-          <h3 className="text-4xl lg:text-5xl font-bold text-primary mb-8 legal-heading">{heading.subtitle}</h3>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto legal-text">{heading.description}</p>
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+            <badge.icon className="w-4 h-4 text-blue-600 mr-2" />
+            <span className="text-blue-600 text-sm font-medium">
+              {badge.text}
+            </span>
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            {heading.title}
+          </h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-blue-600 mb-6">
+            {heading.subtitle}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            {heading.description}
+          </p>
         </div>
 
-        {/* Professional Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8">
-          {services.map((service, idx) => (
-            <ServiceCard
-              key={idx}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              href={service.href}
-              buttonText={service.buttonText}
-            />
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <Card key={index} className="group hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+              <CardHeader className="pb-2">
+                <div className="w-12 h-12 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center mb-3">
+                  <service.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg font-bold text-gray-900">
+                  {service.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex-1 pt-0">
+                <CardDescription className="text-gray-600 text-sm mb-4">
+                  {service.description}
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="justify-center">
+                <Link 
+                  href={service.href}
+                  className="inline-flex items-center justify-center px-5 py-2 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors text-sm"
+                >
+                  {service.buttonText}
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 
-        {/* Professional Call-to-Action */}
-        <PracticeAreasCTA href={cta.href} text={cta.text} />
+        {/* CTA Button */}
+        <div className="text-center mt-10">
+          <Link 
+            href={cta.href}
+            className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+          >
+            {cta.text}
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
