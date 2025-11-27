@@ -139,10 +139,10 @@ export const servicesData = {
     },
     {
       icon: Handshake,
-      title: "Đại diện ngoài tố tụng",
-      description: "Văn phòng Luật sư Tùng Lâm cung cấp dịch vụ Đại diện Pháp lý Toàn diện, giúp quý khách hàng giải quyết mọi vấn đề pháp lý phức tạp ngoài tố tụng. Văn phòng Luật sư Tùng Lâm đại diện  trong các giao dịch, đàm phán hợp đồng, và thực hiện thủ tục hành chính phức tạp, đảm bảo mọi vấn đề được xử lý chính xác, nhanh chóng và đạt được mục tiêu của khách hàng mà không cần tiến hành các thủ tục tố tụng kéo dài",
+      title: "Đại diện theo ủy quyền",
+      description: "Văn phòng Luật sư Tùng Lâm cung cấp dịch vụ Đại diện pháp lý theo ủy quyền, giúp quý khách hàng giải quyết mọi vấn đề pháp lý phức tạp trong tố tụng. Văn phòng Luật sư Tùng Lâm đại diện trong các giao dịch, đàm phán hợp đồng, và thực hiện thủ tục hành chính phức tạp, đảm bảo mọi vấn đề được xử lý chính xác, nhanh chóng và đạt được mục tiêu của khách hàng một cách hiệu quả nhất.",
       href: "/activity/family",
-      buttonText: "Tìm hiểu về Dịch vụ Đại diện Pháp lý"
+      buttonText: "Tìm hiểu về Dịch vụ Đại diện theo ủy quyền"
     },
     {
       icon: Scale,

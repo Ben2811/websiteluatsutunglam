@@ -6,6 +6,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { SidebarItems } from '@/lib/utils/sidebar';
+import { 
+  ScaleIcon 
+} 
+
+from 'lucide-react'
 
 export const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,10 +22,10 @@ export const Sidebar = () => {
         <Button
           onClick={() => setIsExpanded(true)}
           variant="default"
-          className="bg-blue-600 hover:bg-blue-700 shadow-lg"
+          className="bg-blue-600 hover:bg-primary shadow-lg w-12 h-12 flex items-center justify-center rounded-1/2"
           title="Mở tra cứu văn bản pháp luật"
         >
-          <span className="text-lg font-bold">▶</span>
+          <ScaleIcon className="w-12 h-12 text-yellow-500" />
         </Button>
       )}
 
@@ -28,7 +33,7 @@ export const Sidebar = () => {
       {isExpanded && (
         <Card className="w-80 p-0 animate-in slide-in-from-left duration-300">
           {/* Header with close button */}
-          <CardHeader className="bg-blue-600 text-white rounded-t-xl p-3 flex items-center justify-between !gap-0">
+          <CardHeader className="bg-primary text-white rounded-t-xl p-3 flex items-center justify-between !gap-0">
             <h3 className="text-sm font-bold text-center flex-1">
               TRA CỨU VĂN BẢN PHÁP LUẬT
             </h3>
